@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="msglist.aspx.cs" Inherits="ZDEnterprise.Web.json.msg.msglist" %>

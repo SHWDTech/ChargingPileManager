@@ -1,0 +1,51 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+
+using System.Text;
+using System;
+
+namespace HelloWorld
+{
+    public class HelloWorldMain
+    {
+        public static void Main(string[] args)
+        {
+            <# 
+            List<SysUser> listUser = GetUserList();
+            foreach(SysUser user in listUser)
+            {
+            #>
+            Console.WriteLine("你好 {0}({1}),欢迎使用 T4 !", "<#= user.UserName #>", "<#= user.UserCode #>");
+            <#}
+            #>
+        }
+    }
+}
+
+
+<#+
+//类
+public class SysUser
+{
+    public string UserCode { get; set; }
+    public string UserName { get; set; }
+    public SysUser(string usercode,string username)
+    {
+        this.UserCode = usercode;
+        this.UserName = username;
+    }
+}
+//初始化众人
+public List<SysUser> GetUserList()
+{
+    List<SysUser> list = new List<SysUser>();
+    list.Add(new SysUser("admin","超级管理员"));
+    list.Add(new SysUser("zhangsan","张三"));
+    list.Add(new SysUser("km","键盘男"));
+    return list;
+}
+
+#>

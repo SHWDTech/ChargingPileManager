@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="wechatpay.aspx.cs" Inherits="ZDEnterprise.Web.Json.pay.wechatpay" %>
